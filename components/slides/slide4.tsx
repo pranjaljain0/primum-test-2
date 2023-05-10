@@ -1,3 +1,3 @@
-export default function Slide1() {
-    return (<h1>Slide 3</h1>)
+export default function Slide4() {
+    return (<h1>Slide 4</h1>)
 }
