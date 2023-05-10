@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: UbuntuBold;
+  src: url('../public/fonts/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+  font-family: UbuntuRegular;
+  src: url('../public/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+  font-family: UbuntuMedium;
+  src: url('../public/fonts/Ubuntu-Medium.ttf');
+}
+
+.UbuntuRegular {
+  font-family: UbuntuRegular;
+}
+
+.UbuntuMedium {
+  font-family: UbuntuMedium;
+}
+
+.UbuntuBold {
+  font-family: UbuntuBold;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
