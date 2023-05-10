@@ -25,7 +25,6 @@ function SlideButton({ setStep, step, trigger, errors }: any) {
                         trigger().then((res: any) => {
                             res && handleNextStep(setStep)
                         })
-
                     }}
                     className={`w-32 h-12 px-4 py-2 text-base text-white rounded-md UbuntuRegular transition hover:scale-90
                 ${step == 3 ? 'bg-primary-purplishBlue hover:bg-primary-purplishBlue/90' : 'bg-primary-marineBlue hover:bg-primary-marineBlue/90'}

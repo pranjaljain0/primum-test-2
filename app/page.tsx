@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </nav>
             <div className="col-span-12 px-8 py-5 lg:pr-[7rem] lg:col-span-8">
-              <span>Form Area</span>
+
               {RenderSlides()}
             </div>
           </div>
