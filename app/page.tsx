@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [step, setStep] = useState(0);
-  const { register, handleSubmit, trigger, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, trigger, getValues, setValue, watch, formState: { errors } } = useForm();
 
   const RenderSlides = () => {
     return (<>
@@ -21,13 +21,14 @@ export default function Home() {
         <Slide1 register={register} errors={errors} />
         : null}
       {step == 1 ?
-        <Slide2 />
+        <Slide2 register={register} getValues={getValues} setValue={setValue} />
         : null}
       {step == 2 ?
-        <Slide3 />
+        <Slide3 register={register} getValues={getValues} setValue={setValue} />
         : null}
       {step == 3 ?
         <Slide4
+          getValues={getValues}
         />
         : null}
       {step == 4 ?

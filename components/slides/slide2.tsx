@@ -1,10 +1,17 @@
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import { plans } from "@/data/plans";
-import { useState } from "react";
 
-export default function Slide2() {
+export default function Slide2({ register, setValue, getValues }: any) {
     const [tab, setTab] = useState(1);
     const [optionPrice, setOptionPrice] = useState(false);
+
+
+    useEffect(() => {
+        setValue('plan', 0)
+        setValue('anually', false)
+    }, [])
 
     return (<>
         <div className="pt-10 pb-8">
@@ -15,7 +22,10 @@ export default function Slide2() {
             {plans.map((plan, index) => (
                 <button
                     key={plan.name}
-                    onClick={() => setTab(index + 1)}
+                    onClick={() => {
+                        setValue('plan', index)
+                        setTab(index + 1)
+                    }}
                     type="button"
                     className={`flex border-[1.4px] flex-row items-center p-4 space-x-4 hover:border-primary-purplishBlue rounded-lg md:flex-col md:items-start md:space-x-0 cursor-pointer
                     ${tab != index + 1 ? ' border-neutral-lightGray' : 'border-primary-purplishBlue bg-neutral-magnolia'}`}
@@ -36,6 +46,7 @@ export default function Slide2() {
                     <input type="checkbox" id="AcceptConditions" className="sr-only peer"
                         checked={optionPrice ? true : false}
                         onChange={() => {
+                            setValue('anually', !optionPrice)
                             setOptionPrice(!optionPrice)
                         }}
                     />
