@@ -8,15 +8,17 @@ import Slide4 from '@/components/slides/slide4';
 import Slide5 from '@/components/slides/slide5';
 import SlideButton from '@/components/Button/SlideButton';
 import { sidenav_data } from '@/data/sidenav';
+import { useForm } from "react-hook-form";
 import { useState } from 'react';
 
 export default function Home() {
   const [step, setStep] = useState(0);
+  const { register, handleSubmit, trigger, watch, formState: { errors } } = useForm();
 
   const RenderSlides = () => {
     return (<>
       {step == 0 ?
-        <Slide1 />
+        <Slide1 register={register} errors={errors} />
         : null}
       {step == 1 ?
         <Slide2 />
@@ -32,7 +34,7 @@ export default function Home() {
         <Slide5 />
         : null}
 
-      <SlideButton setStep={setStep} step={step} />
+      <SlideButton setStep={setStep} step={step} trigger={trigger} errors={errors} />
     </>)
   }
 

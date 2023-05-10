@@ -12,19 +12,19 @@ function SideNav({
                 </div>
                 <div className={
                     state == 'active' ?
-                        'flex items-center justify-center mb-2 border-none rounded-full  h-12 w-12 lg:w-9 lg:h-9 text-primary-marineBlue bg-primary-lightBlue myFontMediu z-40'
+                        'flex items-center justify-center mb-2 border-none rounded-full  h-12 w-12 lg:w-9 lg:h-9 text-primary-marineBlue bg-primary-lightBlue UbuntuMediu z-40'
                         :
-                        'flex items-center justify-center mb-2 text-white border-[1.5px] border-white rounded-full h-12 w-12 lg:w-9 lg:h-9 bg-trasparent myFontMedium'
+                        'flex items-center justify-center mb-2 text-white border-[1.5px] border-white rounded-full h-12 w-12 lg:w-9 lg:h-9 bg-trasparent UbuntuMedium'
                 }>{step}
                 </div>
             </div>
 
             <div className="">
                 {title &&
-                    <h3 className="text-xs text-neutral-lightGray myFontMedium">{title}</h3>
+                    <h3 className="text-xs text-neutral-lightGray UbuntuMedium">{title}</h3>
                 }
                 {message &&
-                    <h4 className="text-sm text-white myFontMedium">{message}</h4>
+                    <h4 className="text-sm text-white UbuntuMedium">{message}</h4>
                 }
             </div>
         </div>

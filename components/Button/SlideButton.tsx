@@ -1,6 +1,6 @@
 import { handleNextStep, handlePrevStep } from "@/helpers/helper"
 
-function SlideButton({ setStep, step }: any) {
+function SlideButton({ setStep, step, trigger, errors }: any) {
     return (
         <>{step != 4 ?
             <div className={
@@ -16,13 +16,18 @@ function SlideButton({ setStep, step }: any) {
                 ${step > 0 ? 'justify-between' : 'justify-end'}`}
             >
                 {step > 0 ?
-                    <button type="button" onClick={() => handlePrevStep(setStep)} className="px-4 py-2 text-base transition rounded-md text-neutral-coolGray myFontBold hover:text-neutral-coolGray/50 hover:scale-90">
+                    <button type="button" onClick={() => handlePrevStep(setStep)} className="px-4 py-2 text-base transition rounded-md text-neutral-coolGray UbuntuBold hover:text-neutral-coolGray/50 hover:scale-90">
                         Go Back
                     </button>
                     : null}
                 <button type="submit"
-                    onClick={() => { handleNextStep(setStep) }}
-                    className={`w-32 h-12 px-4 py-2 text-base text-white rounded-md myFontRegular transition hover:scale-90
+                    onClick={() => {
+                        trigger().then((res: any) => {
+                            res && handleNextStep(setStep)
+                        })
+
+                    }}
+                    className={`w-32 h-12 px-4 py-2 text-base text-white rounded-md UbuntuRegular transition hover:scale-90
                 ${step == 3 ? 'bg-primary-purplishBlue hover:bg-primary-purplishBlue/90' : 'bg-primary-marineBlue hover:bg-primary-marineBlue/90'}
                 `}>
                     {step == 3 ? 'Confirm' : 'Next Step'}
