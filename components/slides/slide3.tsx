@@ -3,15 +3,8 @@ import { useCallback, useEffect, useState } from "react";
 import { addOn } from "@/types/addOn";
 import { addOns } from "@/data/addOns";
 
-export default function Slide3({ register, getValues, setValues }: any) {
-    const [userSelected, setUserSelected] = useState({})
+export default function Slide3({ register, getValues, setValue }: any) {
     const [selectedAddOns, setSelectedAddOns] = useState<addOn[]>([]);
-
-    const calculateAddOnPrice = (newSelectedAddOns: any, checkPlan: any, picks: any) => {
-        return checkPlan
-            ? newSelectedAddOns.map((name: any) => picks.find((p: any) => p.name === name).priceAddYr)
-            : newSelectedAddOns.map((name: any) => picks.find((p: any) => p.name === name).priceAddMo);
-    };
 
     const handleClick = useCallback(
         (addOn: any) => {
@@ -24,18 +17,18 @@ export default function Slide3({ register, getValues, setValues }: any) {
                 newSelectedAddOns.push(addOn.name);
             }
             setSelectedAddOns(newSelectedAddOns);
-            setValues('selectedAddOns',
+            setValue('selectedAddOns',
                 JSON.stringify(newSelectedAddOns))
         },
         [selectedAddOns]
     );
 
     useEffect(() => {
-        setValues('selectedAddOns',
+        setValue('selectedAddOns',
             JSON.stringify({}))
-        setValues('onlineservice', false)
-        setValues('largerstorage', false)
-        setValues('custom', false)
+        setValue('onlineservice', false)
+        setValue('largerstorage', false)
+        setValue('custom', false)
     }, [])
 
 
