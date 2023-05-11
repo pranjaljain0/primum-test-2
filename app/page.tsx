@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import SideNav from '@/components/SideNav/SideNav';
 import Slide1 from '@/components/slides/slide1';
@@ -9,38 +9,39 @@ import Slide5 from '@/components/slides/slide5';
 import SlideButton from '@/components/Button/SlideButton';
 import { UserSchema } from '@/schema';
 import { sidenav_data } from '@/data/sidenav';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 export default function Home() {
   const [step, setStep] = useState(0);
-  const { register, handleSubmit, trigger, getValues, setValue, watch, formState: { errors } } = useForm({ resolver: zodResolver(UserSchema) });
+  const {
+    register,
+    handleSubmit,
+    trigger,
+    getValues,
+    setValue,
+    watch,
+    formState: { errors }
+  } = useForm({ resolver: zodResolver(UserSchema) });
 
   const RenderSlides = () => {
-    return (<>
-      {step == 0 ?
-        <Slide1 register={register} errors={errors} />
-        : null}
-      {step == 1 ?
-        <Slide2 register={register} getValues={getValues} setValue={setValue} />
-        : null}
-      {step == 2 ?
-        <Slide3 register={register} getValues={getValues} setValue={setValue} />
-        : null}
-      {step == 3 ?
-        <Slide4
-          setStep={setStep}
-          getValues={getValues}
-        />
-        : null}
-      {step == 4 ?
-        <Slide5 />
-        : null}
+    return (
+      <>
+        {step == 0 ? <Slide1 register={register} errors={errors} /> : null}
+        {step == 1 ? (
+          <Slide2 register={register} getValues={getValues} setValue={setValue} />
+        ) : null}
+        {step == 2 ? (
+          <Slide3 register={register} getValues={getValues} setValue={setValue} />
+        ) : null}
+        {step == 3 ? <Slide4 setStep={setStep} getValues={getValues} /> : null}
+        {step == 4 ? <Slide5 /> : null}
 
-      <SlideButton setStep={setStep} step={step} trigger={trigger} errors={errors} />
-    </>)
-  }
+        <SlideButton setStep={setStep} step={step} trigger={trigger} errors={errors} />
+      </>
+    );
+  };
 
   return (
     <main>
@@ -55,20 +56,16 @@ export default function Home() {
                       step={step_data_item.step}
                       title={step_data_item.title}
                       message={step_data_item.message}
-                      state={index === step ? "active" : ""}
+                      state={index === step ? 'active' : ''}
                     />
                   </div>
                 ))}
               </div>
             </nav>
-            <div className="col-span-12 px-8 py-5 lg:pr-[7rem] lg:col-span-8">
-
-              {RenderSlides()}
-            </div>
+            <div className="col-span-12 px-8 py-5 lg:pr-[7rem] lg:col-span-8">{RenderSlides()}</div>
           </div>
         </div>
       </div>
-
     </main>
   );
 }
