@@ -39,8 +39,7 @@ export default function Slide4({ getValues, setStep }: any) {
                                 plan.name} ({anually == false ? 'Monthly' : 'Yearly'})
                             </h1>
                             <button
-                                // TODO: Add link to second page
-                                onClick={() => { }}
+                                onClick={() => { setStep(1) }}
                                 className="relative font-medium text-primary-purplishBlue before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-purplishBlue before:transition hover:before:scale-100">
                                 Change
                             </button>
