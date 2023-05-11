@@ -17,8 +17,8 @@ export const addOns = [
         id: 'custom',
         name: 'Customizable Profile',
         desc: 'Custom theme on your profile',
-        priceAddMo: 1,
-        priceAddYr: 10
+        priceAddMo: 2,
+        priceAddYr: 20
     }
 
 ];

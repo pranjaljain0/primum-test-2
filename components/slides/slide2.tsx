@@ -9,8 +9,14 @@ export default function Slide2({ register, setValue, getValues }: any) {
 
 
     useEffect(() => {
-        setValue('plan', 0)
-        setValue('anually', false)
+        if (getValues('plan') !== undefined && getValues('plan') !== null) {
+            setTab(getValues('plan') + 1)
+            setOptionPrice(getValues('anually'))
+        }
+        else {
+            setValue('plan', 0)
+            setValue('anually', false)
+        }
     }, [])
 
     return (<>

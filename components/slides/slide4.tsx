@@ -7,10 +7,17 @@ export default function Slide4({ getValues }: any) {
     const basePrice = anually ? plan.priceYr : plan.priceMo;
 
     var selectedAddOnsNames = JSON.parse(getValues("selectedAddOns"))
-    const selectedAddOnsObject = selectedAddOnsNames.map((item: any, index: any) => {
-        return addOns.find(obj => obj.name === item)
-    });
-    const total = basePrice + selectedAddOnsObject.reduce((a: any, b: any) => a + anually ? b.priceAddYr : b.priceAddMo, 0);
+
+    var total = 0;
+    var selectedAddOnsObject = []
+    if (selectedAddOnsNames != undefined && selectedAddOnsNames != null && selectedAddOnsNames.length > 0) {
+        selectedAddOnsObject = selectedAddOnsNames.map((item: any, index: any) => {
+            return addOns.find(obj => obj.name === item)
+        });
+        total = basePrice + selectedAddOnsObject.reduce((a: any, b: any) => a + anually ? b.priceAddYr : b.priceAddMo, 0);
+    }
+    else
+        total = basePrice;
 
     return (<>
         <div className="pt-10 pb-8">
@@ -39,7 +46,7 @@ export default function Slide4({ getValues }: any) {
                     </div>
                     <div className="flex items-center justify-between pt-5">
                         <div className="space-y-4">
-                            {selectedAddOnsObject.map((item: any, index: number) => (
+                            {selectedAddOnsObject !== null && selectedAddOnsObject.length != 0 && selectedAddOnsObject.map((item: any, index: number) => (
                                 <h1 className="text-sm md:text-base UbuntuRegular text-neutral-coolGray" key={index}>
                                     {item.name}
                                 </h1>

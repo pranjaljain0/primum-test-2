@@ -24,11 +24,13 @@ export default function Slide3({ register, getValues, setValue }: any) {
     );
 
     useEffect(() => {
-        setValue('selectedAddOns',
-            JSON.stringify({}))
-        setValue('onlineservice', false)
-        setValue('largerstorage', false)
-        setValue('custom', false)
+        if (getValues("selectedAddOns") !== undefined && getValues("selectedAddOns") !== null) {
+            setSelectedAddOns(JSON.parse(getValues("selectedAddOns")))
+        }
+        else {
+            setValue('selectedAddOns',
+                JSON.stringify({}))
+        }
     }, [])
 
 
