@@ -28,10 +28,6 @@ export default function Slide1({
                         register={register}
                         required
                         name='email'
-                        pattern={{
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: "Invalid Email address"
-                        }}
                         errorMessage={errors.email ? errors.email : null}
                     />
                     <InputWrapper
@@ -41,10 +37,6 @@ export default function Slide1({
                         name="phone"
                         register={register}
                         required
-                        pattern={{
-                            value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-                            message: "Invalid Phone number"
-                        }}
                         errorMessage={errors.phone ? errors.phone : null}
                     />
                 </form>

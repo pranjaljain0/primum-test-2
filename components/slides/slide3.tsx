@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { addOn } from "@/types/addOn";
+import { addOn } from "@/types";
 import { addOns } from "@/data/addOns";
 
 export default function Slide3({ register, getValues, setValue }: any) {
     const [selectedAddOns, setSelectedAddOns] = useState<any>([]);
 
     const handleClick = useCallback(
-        (addOn: any) => {
+        (addOn: addOn) => {
             let newSelectedAddOns = [...selectedAddOns];
             if (newSelectedAddOns.includes(addOn.name)) {
                 newSelectedAddOns = newSelectedAddOns.filter(
@@ -33,8 +33,6 @@ export default function Slide3({ register, getValues, setValue }: any) {
         }
     }, [])
 
-
-
     return (<>
         <div className="pt-10 pb-8">
             <h1 className='text-4xl UbuntuBold text-primary-marineBlue'>Pick add-ons</h1>
@@ -42,7 +40,7 @@ export default function Slide3({ register, getValues, setValue }: any) {
         </div>
         <div className="grid grid-cols-1 gap-6">
             <div className="space-y-4">
-                {addOns.map((addOnItem, index) => (
+                {addOns.map((addOnItem: addOn, index) => (
                     <div key={index}>
                         <div className="relative">
                             <input

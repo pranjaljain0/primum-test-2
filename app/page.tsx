@@ -7,13 +7,15 @@ import Slide3 from '@/components/slides/slide3';
 import Slide4 from '@/components/slides/slide4';
 import Slide5 from '@/components/slides/slide5';
 import SlideButton from '@/components/Button/SlideButton';
+import { UserSchema } from '@/schema';
 import { sidenav_data } from '@/data/sidenav';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 export default function Home() {
   const [step, setStep] = useState(0);
-  const { register, handleSubmit, trigger, getValues, setValue, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, trigger, getValues, setValue, watch, formState: { errors } } = useForm({ resolver: zodResolver(UserSchema) });
 
   const RenderSlides = () => {
     return (<>
