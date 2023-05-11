@@ -4,7 +4,7 @@ import { addOn } from "@/types/addOn";
 import { addOns } from "@/data/addOns";
 
 export default function Slide3({ register, getValues, setValue }: any) {
-    const [selectedAddOns, setSelectedAddOns] = useState<addOn[]>([]);
+    const [selectedAddOns, setSelectedAddOns] = useState<any>([]);
 
     const handleClick = useCallback(
         (addOn: any) => {
@@ -37,8 +37,8 @@ export default function Slide3({ register, getValues, setValue }: any) {
 
     return (<>
         <div className="pt-10 pb-8">
-            <h1 className='text-4xl myFontBold text-primary-marineBlue'>Pick add-ons</h1>
-            <h1 className='pt-2 text-base lg:text-lg myFontRegular text-neutral-coolGray'>Add-ons help enhance your gaming experience.</h1>
+            <h1 className='text-4xl UbuntuBold text-primary-marineBlue'>Pick add-ons</h1>
+            <h1 className='pt-2 text-base lg:text-lg UbuntuRegular text-neutral-coolGray'>Add-ons help enhance your gaming experience.</h1>
         </div>
         <div className="grid grid-cols-1 gap-6">
             <div className="space-y-4">
@@ -67,11 +67,11 @@ export default function Slide3({ register, getValues, setValue }: any) {
                             peer-checked:bg-neutral-magnolia"
                             >
                                 <div className="pl-8 lg:pl-10">
-                                    <p className="text-sm lg:text-base text-primary-marineBlue myFontMedium">{addOnItem.name}</p>
-                                    <p className="pt-1 text-xs lg:text-sm text-neutral-coolGray myFontRegular">{addOnItem.desc}</p>
+                                    <p className="text-sm lg:text-base text-primary-marineBlue UbuntuMedium">{addOnItem.name}</p>
+                                    <p className="pt-1 text-xs lg:text-sm text-neutral-coolGray UbuntuRegular">{addOnItem.desc}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm lg:text-base text-primary-purplishBlue myFontMedium">
+                                    <p className="text-sm lg:text-base text-primary-purplishBlue UbuntuMedium">
                                         {!getValues("anually") ? '+$' + addOnItem.priceAddMo + '/mo' : '+$' + addOnItem.priceAddYr + '/yr'}
                                     </p>
                                 </div>
