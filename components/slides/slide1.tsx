@@ -11,7 +11,7 @@ export default function Slide1({
                 <h1 className='pt-2 text-base lg:text-lg UbuntuRegular text-neutral-coolGray'>Please provide your name, email address, and phone number.</h1>
             </div>
             <div>
-                <form>
+                <form id="user-info-form">
                     <InputWrapper
                         label="Name"
                         id='name'

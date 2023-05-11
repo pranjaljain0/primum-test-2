@@ -20,5 +20,4 @@ export const addOns = [
         priceAddMo: 2,
         priceAddYr: 20
     }
-
 ];

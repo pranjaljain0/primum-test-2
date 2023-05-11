@@ -74,7 +74,7 @@ export default function Slide4({ getValues }: any) {
                         </h1>
                     </div>
                     <div>
-                        <h1 className="text-base md:text-lg UbuntuBold text-primary-purplishBlue">
+                        <h1 id="totalAmount" className="text-base md:text-lg UbuntuBold text-primary-purplishBlue">
                             {anually == false ? '$' + total + '/mo' : '$' + total + '/yr'}
                         </h1>
                     </div>

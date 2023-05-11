@@ -28,6 +28,7 @@ export default function Slide2({ register, setValue, getValues }: any) {
             {plans.map((plan, index) => (
                 <button
                     key={plan.name}
+                    id={plan.name}
                     onClick={() => {
                         setValue('plan', index)
                         setTab(index + 1)
@@ -48,15 +49,15 @@ export default function Slide2({ register, setValue, getValues }: any) {
         <div className="flex items-center justify-center p-4 mt-6 bg-neutral-alabaster">
             <div className="flex items-center space-x-3">
                 <h1 className={`text-sm UbuntuMedium  ${optionPrice == false ? 'text-primary-marineBlue' : 'text-neutral-coolGray'}`}>Monthly</h1>
-                <label htmlFor="AcceptConditions" className="relative cursor-pointer h-7 w-14">
-                    <input type="checkbox" id="AcceptConditions" className="sr-only peer"
+                <label htmlFor="anually" className="relative cursor-pointer h-7 w-14">
+                    <input type="checkbox" id="anually" className="sr-only peer"
                         checked={optionPrice ? true : false}
                         onChange={() => {
                             setValue('anually', !optionPrice)
                             setOptionPrice(!optionPrice)
                         }}
                     />
-                    <span className="absolute inset-0 transition rounded-full bg-neutral-lightGray peer-checked:bg-primary-marineBlue"></span>
+                    <span id="customSlider" className="absolute inset-0 transition rounded-full bg-neutral-lightGray peer-checked:bg-primary-marineBlue"></span>
                     <span className="absolute inset-0 m-1 h-5 w-5 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:w-5 peer-checked:translate-x-7 peer-checked:bg-white peer-checked:ring-transparent"> </span>
                 </label>
                 <h1 className={`text-sm UbuntuMedium  ${optionPrice == true ? 'text-primary-marineBlue' : 'text-neutral-coolGray'}`}>Yearly</h1>

@@ -21,6 +21,7 @@ function SlideButton({ setStep, step, trigger, errors }: any) {
                     </button>
                     : null}
                 <button type="submit"
+                    id="slideButton"
                     onClick={() => {
                         trigger().then((res: any) => {
                             res && handleNextStep(setStep)
