@@ -30,6 +30,7 @@ export default function Home() {
         : null}
       {step == 3 ?
         <Slide4
+          setStep={setStep}
           getValues={getValues}
         />
         : null}
