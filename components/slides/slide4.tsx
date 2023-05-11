@@ -14,7 +14,13 @@ export default function Slide4({ getValues }: any) {
         selectedAddOnsObject = selectedAddOnsNames.map((item: any, index: any) => {
             return addOns.find(obj => obj.name === item)
         });
-        total = basePrice + selectedAddOnsObject.reduce((a: any, b: any) => a + anually ? b.priceAddYr : b.priceAddMo, 0);
+        total = basePrice + selectedAddOnsObject.reduce((a: any, b: any) => {
+            if (anually)
+                return a + b.priceAddYr
+            else
+                return a + b.priceAddMo
+        }, 0);
+
     }
     else
         total = basePrice;
