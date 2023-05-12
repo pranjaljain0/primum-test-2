@@ -7,7 +7,6 @@ export default {
   preset: 'ts-jest',
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
-    "^.+\\.(js|jsx)$": "babel-jest",
   },
   // All imported modules in your tests should be mocked automatically
   // automock: false,

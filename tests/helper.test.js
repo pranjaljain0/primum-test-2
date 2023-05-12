@@ -1,6 +1,6 @@
 // const sum = require('./sum');
-import { handleEmailValidation, handleNextStep, handlePrevStep } from "../helpers/helper"
-
+// import { handleEmailValidation, handleNextStep, handlePrevStep } from "../helpers/helper"
+const { handleEmailValidation, handleNextStep, handlePrevStep } = require("../helpers/helper")
 test('Test email validation function', () => {
     expect(handleEmailValidation("pranjaljain0697@gmail.com", {})).toBe(true);
     expect(handleEmailValidation("pranjaljain0697", {})).toBe(false);
