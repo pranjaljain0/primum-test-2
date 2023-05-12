@@ -1,6 +1,6 @@
 export const handleNextStep = async (setStep: Function) => {
   try {
-    setStep((prevStep: any) => prevStep + 1);
+    setStep((prevStep: number) => prevStep + 1);
   } catch (e) {
     console.log(e);
   }
@@ -8,7 +8,7 @@ export const handleNextStep = async (setStep: Function) => {
 
 export const handlePrevStep = async (setStep: Function) => {
   try {
-    setStep((prevStep: any) => prevStep - 1);
+    setStep((prevStep: number) => prevStep - 1);
   } catch (e) {
     console.log(e);
   }
@@ -25,6 +25,5 @@ export const handleEmailValidation = (email: string, errors: any) => {
   if (validityChanged) {
     console.log('Fire tracker with', isValid ? 'Valid' : 'Invalid');
   }
-
   return isValid;
 };
