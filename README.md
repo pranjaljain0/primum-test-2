@@ -1,5 +1,7 @@
 # Multi-Step Form
 
+Deployed on [Vercel](https://vercel.com/) at [primum-test-2.vercel.app](https://primum-test-2.vercel.app/)
+
 This project is a multi-step form with form validation and a summary page. Users can complete each step of the form, go back to a previous step to update their selections, see a summary of their selections on the final step, and confirm their order.
 
 ## Getting Started
@@ -74,8 +76,14 @@ This project is fully functional, with no major bugs or performance issues. The 
 
 Unit and integration tests are implemented using Jest, and end-to-end tests are implemented using Cypress.
 
-To run cypress test you can run
+To run cypress for E2E test you can run
 
 ```bash
 npm run cy:run
+```
+
+To test the helper functions you can run
+
+```bash
+npm run test
 ```
