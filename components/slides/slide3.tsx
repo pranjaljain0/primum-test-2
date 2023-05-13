@@ -46,7 +46,7 @@ export default function Slide3({ register, getValues, setValue }: any) {
                   name="add_on"
                   value={addOnItem.name}
                   id={addOnItem.id}
-                  checked={selectedAddOns.includes(addOnItem.name)}
+                  checked={selectedAddOns !== undefined && selectedAddOns !== null && Object.keys(selectedAddOns).length !== 0 && selectedAddOns.includes(addOnItem.name)}
                   className="peer w-5 h-5 absolute top-[1.8rem] left-[1rem] accent-primary-purplishBlue rounded-lg"
                   onChange={() => handleClick(addOnItem)}
                 />
