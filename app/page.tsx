@@ -45,6 +45,18 @@ export default function Home() {
 
   return (
     <main>
+      <nav className="block lg:hidden">
+        <div className="bg-no-repeat bg-cover h-[15rem] flex items-center justify-center bg-[url(/images/bg-sidebar-mobile.svg)]"        >
+          {sidenav_data.map((step_data_item, index) => (
+            <SideNav
+              step={step_data_item.step}
+              title=""
+              message=""
+              state={index === step ? 'active' : ''}
+            />
+          ))}
+        </div>
+      </nav>
       <div className="flex flex-col items-center justify-start h-screen pt-32 lg:justify-center lg:pb-0 lg:pt-0 bg-neutral-magnolia">
         <div className="absolute pb-8 mx-4 bg-white rounded-lg shadow-lg top-[10rem] lg:w-[65rem] lg:relative lg:top-0 lg:pb-0 h-[650px] md:h-[610px]">
           <div className="grid grid-cols-12 gap-8 lg:gap-6 md:gap-12">
